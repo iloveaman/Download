@@ -1,7 +1,7 @@
 # Download
 Android Download utils
 
-<u><li>该下载工具类是在<a href="https://github.com/etao-open-source/cube-sdk">etao-open-source/cube-sdk</a>基础上改写。<li>
+<u><li>该下载工具类是在<a href="https://github.com/etao-open-source/cube-sdk">etao-open-source/cube-sdk</a>基础上改写。</li>
 <li>原工具类中不能下载链接含中文的文件，该工具类做了修改。</li></u>
 
 使用方法（filename, e.g. XXX.doc）：
