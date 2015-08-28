@@ -5,6 +5,7 @@ Android Download utils
 <li>原工具类中不能下载链接含中文的文件，该工具类做了修改。</li></u>
 
 使用方法（filename, e.g. XXX.doc）：
+```
 new Handler().post(new DownloadTask(new DownLoadListener() {
             @Override
             public void onCancel() {
@@ -30,8 +31,9 @@ new Handler().post(new DownloadTask(new DownLoadListener() {
                 mHandler.sendMessage(mHandler.obtainMessage(PROGRESS_UPDATE_PROGRESS,percent,0));
             }
         }, url, filename));
-
+```
 或者：
+```
 new Thread(new DownloadTask(new DownLoadListener() {
             @Override
             public void onCancel() {
@@ -57,3 +59,4 @@ new Thread(new DownloadTask(new DownLoadListener() {
                 mHandler.sendMessage(mHandler.obtainMessage(PROGRESS_UPDATE_PROGRESS, percent, 0));
             }
         }, url, filename)).start();
+```
