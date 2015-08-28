@@ -1,10 +1,10 @@
 # Download
 Android Download utils
 
-¸ÃÏÂÔØ¹¤¾ßÀàÊÇ¸ù¾İ<a href="https://github.com/etao-open-source/cube-sdk">etao-open-source/cube-sdk</a>»ù´¡ÉÏ¸ÄĞ´¡£
-Ô­¹¤¾ßÀàÖĞ²»ÄÜÏÂÔØÁ´½Óº¬ÖĞÎÄµÄÎÄ¼ş£¬¸Ä¹¤¾ßÀà×öÁËĞŞ¸Ä¡£
+<u><li>è¯¥ä¸‹è½½å·¥å…·ç±»æ˜¯åœ¨<a href="https://github.com/etao-open-source/cube-sdk">etao-open-source/cube-sdk</a>åŸºç¡€ä¸Šæ”¹å†™ã€‚<li>
+<li>åŸå·¥å…·ç±»ä¸­ä¸èƒ½ä¸‹è½½é“¾æ¥å«ä¸­æ–‡çš„æ–‡ä»¶ï¼Œè¯¥å·¥å…·ç±»åšäº†ä¿®æ”¹ã€‚</li></u>
 
-Ê¹ÓÃ·½·¨£¨filename, e.g. XXX.doc£©£º
+ä½¿ç”¨æ–¹æ³•ï¼ˆfilename, e.g. XXX.docï¼‰ï¼š
 new Handler().post(new DownloadTask(new DownLoadListener() {
             @Override
             public void onCancel() {
@@ -14,11 +14,11 @@ new Handler().post(new DownloadTask(new DownLoadListener() {
             public void onDone(boolean canceled, int error) {
                 mHandler.sendEmptyMessage(PROGRESS_HIDE);
                 if (error == DownloadTask.RESULT_DOWNLOAD_ERROR) {
-                    SuperToastManager.makeText(getActivity(), "ÏÂÔØÊ§°Ü", Toast.LENGTH_LONG).show();
+                    SuperToastManager.makeText(getActivity(), "ä¸‹è½½å¤±è´¥", Toast.LENGTH_LONG).show();
                 } else if (error == DownloadTask.RESULT_URL_ERROR) {
-                    SuperToastManager.makeText(getActivity(), "ÏÂÔØÁ´½Ó´íÎó", Toast.LENGTH_LONG).show();
+                    SuperToastManager.makeText(getActivity(), "ä¸‹è½½é“¾æ¥é”™è¯¯", Toast.LENGTH_LONG).show();
                 } else if (error == DownloadTask.RESULT_NO_ENOUGH_SPACE) {
-                    SuperToastManager.makeText(getActivity(), "´æ´¢¿Õ¼ä²»×ã", Toast.LENGTH_LONG).show();
+                    SuperToastManager.makeText(getActivity(), "å­˜å‚¨ç©ºé—´ä¸è¶³", Toast.LENGTH_LONG).show();
                 } else {
                     open(mFilepath);
                 }
@@ -26,12 +26,12 @@ new Handler().post(new DownloadTask(new DownLoadListener() {
 
             @Override
             public void onPercentUpdate(final int percent) {
-                CLog.i(TAG, "ÏÂÔØ½ø¶È" + percent);
+                CLog.i(TAG, "ä¸‹è½½è¿›åº¦" + percent);
                 mHandler.sendMessage(mHandler.obtainMessage(PROGRESS_UPDATE_PROGRESS,percent,0));
             }
         }, url, filename));
 
-»òÕß£º
+æˆ–è€…ï¼š
 new Thread(new DownloadTask(new DownLoadListener() {
             @Override
             public void onCancel() {
@@ -41,11 +41,11 @@ new Thread(new DownloadTask(new DownLoadListener() {
             public void onDone(boolean canceled, int error) {
                 mHandler.sendEmptyMessage(PROGRESS_HIDE);
                 if (error == DownloadTask.RESULT_DOWNLOAD_ERROR) {
-                    SuperToastManager.makeText(getActivity(), "ÏÂÔØÊ§°Ü", Toast.LENGTH_LONG).show();
+                    SuperToastManager.makeText(getActivity(), "ä¸‹è½½å¤±è´¥", Toast.LENGTH_LONG).show();
                 } else if (error == DownloadTask.RESULT_URL_ERROR) {
-                    SuperToastManager.makeText(getActivity(), "ÏÂÔØÁ´½Ó´íÎó", Toast.LENGTH_LONG).show();
+                    SuperToastManager.makeText(getActivity(), "ä¸‹è½½é“¾æ¥é”™è¯¯", Toast.LENGTH_LONG).show();
                 } else if (error == DownloadTask.RESULT_NO_ENOUGH_SPACE) {
-                    SuperToastManager.makeText(getActivity(), "´æ´¢¿Õ¼ä²»×ã", Toast.LENGTH_LONG).show();
+                    SuperToastManager.makeText(getActivity(), "å­˜å‚¨ç©ºé—´ä¸è¶³", Toast.LENGTH_LONG).show();
                 } else {
                     open(mFilepath);
                 }
@@ -53,7 +53,7 @@ new Thread(new DownloadTask(new DownLoadListener() {
 
             @Override
             public void onPercentUpdate(final int percent) {
-                CLog.i(TAG, "ÏÂÔØ½ø¶È" + percent);
+                CLog.i(TAG, "ä¸‹è½½è¿›åº¦" + percent);
                 mHandler.sendMessage(mHandler.obtainMessage(PROGRESS_UPDATE_PROGRESS, percent, 0));
             }
         }, url, filename)).start();
